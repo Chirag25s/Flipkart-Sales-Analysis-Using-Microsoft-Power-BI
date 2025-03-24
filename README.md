@@ -18,30 +18,28 @@ To begin, I sourced and consolidated data from multiple sources, ensuring all re
 Data quality is paramount in any analytical project. Using Power Query Editor, I performed extensive data cleaning and transformation tasks, including:
 - **Handling Missing Values:** Identified and replaced or removed missing entries to maintain **data integrity**.
 - **Data Type Standardization:** Ensured numeric fields, dates, and categorical variables were correctly formatted for precise calculations.
-- **Removing Duplicates and Anomalies:** Filtered out erroneous or duplicate entries to enhance the reliability of insights.
+- **Removing Duplicates and Anomalies:** Using **Power Query Editor**, duplicate entries and incomplete fields were systematically addressed—removing redundancies and imputing missing values based on predefined business logic.
 - **Creating Custom Columns:** Developed new columns where necessary to support advanced calculations and improve analytical capabilities.
 
 By structuring the data effectively, I ensured that subsequent analysis would be both accurate and efficient.
 
 
 ### 3. Data Modeling
-Once the data was cleaned, I focused on structuring it into a well-organized relational data model. By defining **one-to-many** relationships between tables (e.g., linking sales transactions to product categories and payment methods), I ensured seamless interaction between datasets. I also:
+Once the data was cleaned, A star schema was constructed by **one-to-many** relationships between fact tables (e.g., Sales) to dimension tables (e.g., Products, Regions) via primary keys (e.g., ProductID). I ensured seamless interaction between datasets. I also:
 
 - Optimized table structures to improve query performance.
-- Created a Date Table to facilitate time intelligence calculations, enabling insights into seasonal sales trends and fluctuations.
-- Used calculated columns and measures to streamline reporting and minimize redundant data storage.
+- A dedicated Date table was created to enable **time-based analytics**, and table structures were refined for query efficiency.
+- Used **calculated columns** and measures to streamline reporting and **minimize redundant data storage**.
 
 This approach ensured a highly scalable model, supporting efficient querying and dynamic analysis.
 
 ### 4. Creating DAX Measures
 To drive deeper insights, I leveraged **Data Analysis Expressions (DAX)** to create powerful, dynamic measures. Some key calculations included:
 
-1. **Total Sales** = SUM of sales amount across all transactions.
-2. **Total Quantity Sold** = SUM of product quantities sold.
-3. **Average Customer Rating** = AVERAGE of customer ratings per product category.
-4. **Discount Percentage** = A derived metric to analyze discount impact on sales performance.
+- **Core Measures:** Key performance indicators **(KPIs)** such as _Total Sales, Average Order Value,_ and _Discount Percentage_ were calculated using **DAX formulas**.
+- **Custom Columns:** **Conditional logic** (e.g., classifying products into “High,” “Medium,” or “Low” tiers based on price) was applied through **calculated columns** for deeper segmentation.
 
-These DAX measures allowed for real-time, interactive data exploration, enhancing the overall analytical depth of the report.
+These DAX measures allowed for real-time, interactive **data exploration**, enhancing the overall analytical depth of the report.
 
 ### 5. Building Visuals
 With the foundation set, I designed an interactive, user-friendly Power BI dashboard to communicate insights effectively. Key visual elements included:
